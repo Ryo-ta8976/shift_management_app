@@ -8,6 +8,7 @@ services:
 
     volumes:
       - ./:/home/workdir/app
-    command: /bin/sh
     working_dir: /home/workdir/app
+    ports:
+      - 3000:3000
     tty: true
