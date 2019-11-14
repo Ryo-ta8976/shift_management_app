@@ -20,7 +20,7 @@ class App extends Component {
             <Typography type="title" color="inherit" style={{ marginRight: 15 }}>
               シフト管理アプリ
             </Typography>
-            <div style={{ float: 'right', display: 'inline-block', width: 1000 }}>
+            <div style={{ display: 'flex', width: 1000 }}>
               <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"

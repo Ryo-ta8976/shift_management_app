@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ControlledOpenSelect from './ControlledOpenSelect';
 
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -7,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
 
 export default class Ranking extends React.Component {
   //一番最初のrender()前に実行
@@ -27,9 +29,15 @@ export default class Ranking extends React.Component {
       <div>
         <h2>{
           typeof category !== 'undefined'
-            ? `${category.name}のランキング`
+            ? `${category.name}`
             : ''
         }</h2>
+        <div>
+          <h3>忙しい時間帯</h3>
+          <div style={{ display: "flex" }}>
+            <ControlledOpenSelect name='Start Time' /><ControlledOpenSelect name='End Time' />
+          </div>
+        </div>
 
         {(() => {
           if (error) {
