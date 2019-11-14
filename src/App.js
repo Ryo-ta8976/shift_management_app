@@ -1,27 +1,48 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, BrowserRouter } from 'react-router-dom';
 import Ranking from './containers/Ranking';
-import Nav from './containers/Nav';
-import Reboot from 'material-ui/Reboot';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import CustomizedMenus from './containers/CustomizedMenus';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 class App extends Component {
   render() {
+    console.log(this.props)
     return (
-      <div className="App" style={{ paddingLeft: 240 }}>
-        <Reboot />
+      <div className="App">
+        <CssBaseline />
 
-        <AppBar style={{ left: 240 }}>
+        <AppBar>
           <Toolbar>
-            <Typography type="title" color="inherit">
-              Yahoo!ショッピングランキング
+            <Typography type="title" color="inherit" style={{ marginRight: 15 }}>
+              シフト管理アプリ
             </Typography>
+            <div style={{ float: 'right', display: 'inline-block', width: 1000 }}>
+              <Button
+                aria-controls="customized-menu"
+                aria-haspopup="true"
+                variant="contained"
+                color="primary"
+                style={{ marginRight: 15 }}
+              >
+                シフト
+              </Button>
+              <Button
+                aria-controls="customized-menu"
+                aria-haspopup="true"
+                variant="contained"
+                color="primary"
+                style={{ marginRight: 15 }}
+              >
+                シフト提出
+              </Button>
+              <CustomizedMenus style={{ marginRight: 15 }} />
+            </div>
           </Toolbar>
         </AppBar>
-
-        <Nav />
 
         <div style={{ marginTop: 64, padding: 32 }}>
           <BrowserRouter>
@@ -40,7 +61,7 @@ class App extends Component {
             </Switch>
           </BrowserRouter>
         </div>
-      </div>
+      </div >
     );
   }
 }
