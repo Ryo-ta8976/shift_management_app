@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ControlledOpenSelect from './ControlledOpenSelect';
+import MultipleDatePicker from 'react-multiple-datepicker'
 
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -37,6 +38,14 @@ export default class Ranking extends React.Component {
           <div style={{ display: "flex" }}>
             <ControlledOpenSelect name='Start Time' /><ControlledOpenSelect name='End Time' />
           </div>
+          <h3>繁忙期</h3>
+          <MultipleDatePicker
+            onSubmit={dates => console.log('selected date', dates)}
+          />
+          <h3>閑散期</h3>
+          <MultipleDatePicker
+            onSubmit={dates => console.log('selected date', dates)}
+          />
         </div>
 
         {(() => {
